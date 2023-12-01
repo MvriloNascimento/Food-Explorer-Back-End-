@@ -30,7 +30,7 @@ The Food Explorer is a restaurant web application. After registering, the user w
 The administrator can create/edit/remove dishes as they wish. They can also change the status of the orders, according to their preparation line in the kitchen. This status will be immediately updated on the consumers' screen.
 ## 🔖 Project Layout
 Page from SignIn
-![PRO2-1](./public/SignIn.png)
+![PRO2-1](./public/Homepage.png)
 <br>
 <br>
 
@@ -81,13 +81,13 @@ https://efficient-sloth-d85.notion.site/Guia-de-resolu-o-Desafio-final-b38a81fe7
 - Start by cloning the project:
 
 ```bash
-  $ 
+  $ https://github.com/MvriloNascimento/Food-Explorer-Back-End-.git
 ```
 
 - Enter the directory:
 
-```bash
-  $ 
+```bash 
+  $ cd + sua pasta + git clone https://github.com/MvriloNascimento/Food-Explorer-Back-End-.git
 ```
 
 - Install dependencies:
@@ -116,9 +116,10 @@ https://efficient-sloth-d85.notion.site/Guia-de-resolu-o-Desafio-final-b38a81fe7
 
 
 ## Test in Website
--
----
+
+- This site refers to the backend (API)
+
 
 ## Website
- -
+ - https://foodexplorer-apii.onrender.com
 ---
