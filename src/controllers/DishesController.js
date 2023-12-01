@@ -9,7 +9,7 @@ class DishesController {
         const checkDishAlreadyExists = await knex("dishes").where({title}).first();
     
         if(checkDishAlreadyExists){
-            throw new AppError("Este prato já existe no cardápio.")
+            throw new AppError("This dish already exists on the menu.")
         }
 
         const imageFileName = request.file.filename;
@@ -96,7 +96,7 @@ class DishesController {
         await knex("ingredients").where({ dish_id: id}).delete()
         await knex("ingredients").where({ dish_id: id}).insert(ingredientsInsert)
 
-        return response.status(201).json('Prato atualizado com sucesso')
+        return response.status(201).json('Dish updated successfully')
     }
 
     async show(request, response) {

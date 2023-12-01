@@ -30,7 +30,7 @@ class OrdersController {
     async index(request, response) {
         const user_id = request.user.id;
 
-        const user = await knex("users").where({ id: user_id }).first();
+        const user = await knex("users").where({id: user_id}).first();
 
         if (!user.isAdmin) {
 
@@ -46,8 +46,8 @@ class OrdersController {
 
                 .innerJoin("orders", "orders.id", "ordersItems.order_id")
                 .groupBy("orders.id")
-
-            const ordersItems = await knex("ordersItems")
+            
+            const ordersItems = await knex("ordersItems") 
             const ordersWithItems = orders.map(order => {
                 const orderItem = ordersItems.filter(item => item.order_id === order.id);
 
@@ -56,7 +56,7 @@ class OrdersController {
                     items: orderItem
                 }
             })
-
+            
             return response.status(200).json(ordersWithItems);
 
         } else {
@@ -72,8 +72,8 @@ class OrdersController {
 
                 .innerJoin("orders", "orders.id", "ordersItems.order_id")
                 .groupBy("orders.id")
-
-            const ordersItems = await knex("ordersItems")
+        
+            const ordersItems = await knex("ordersItems") 
             const ordersWithItems = orders.map(order => {
                 const orderItem = ordersItems.filter(item => item.order_id === order.id);
 
@@ -82,16 +82,16 @@ class OrdersController {
                     items: orderItem
                 }
             })
-
+        
             return response.status(200).json(ordersWithItems);
         }
     }
 
     async update(request, response) {
         const { id, orderStatus } = request.body;
-
+    
         await knex("orders").update({ orderStatus }).where({ id })
-
+        
         return response.status(201).json();
     }
 }
